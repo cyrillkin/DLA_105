@@ -37,12 +37,12 @@ var_1 = int(input('First variable:'))   #ввод первой переменн�
 var_2 = int(input('Second variable:'))  #ввод второй переменной
 
 # Первый способ:
-var_1, var_2 = var_2, var_1
+#var_1, var_2 = var_2, var_1
 
 # Второй способ:
 div = var_1/var_2
-var_1 = var_1/div
-var_2 = var_2*div
+var_1 = int(var_1/div)
+var_2 = int(var_2*div)
 
 print('\nVariables exchange!\nFirst variable:', var_1, '\nSecond variable:', var_2) #вывод на экран
 """

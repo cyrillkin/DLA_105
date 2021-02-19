@@ -17,20 +17,14 @@ __author__ = 'Маштаков Кирилл Владимирович'
 
 a = 1000000
 
-"""
-a = a**2
-a = bool(a)
-print(a)
-"""
+# a = a**2
+# a = bool(a)
+# print(a)
 
-"""
-a = a*2
-a = bool(a)
-print(a)
-"""
+# a = a*2
+# a = bool(a)
+# print(a)
 
-"""
-a = a > 999999
-a = bool(a)
-print(a)
-"""
+# a = a > 999999
+# a = bool(a)
+# print(a)
