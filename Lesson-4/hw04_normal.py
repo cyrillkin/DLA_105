@@ -2,8 +2,22 @@
 # Напишите функцию, возвращающую ряд Фибоначчи с n-элемента до m-элемента.
 # Первыми элементами ряда считать цифры 1 1
 
-def fibonacci(n, m):
-    pass
+# def fibonacci(n, m):
+#     pass
+#
+# def fibonacci(n, m):
+#     a = 0
+#     b = 1
+#     c = 0
+#     for i in range(n):
+#         if c < m:
+#             a, b = b, a + b
+#             print(a)
+#         c += 1
+#
+# n = 10
+# m = 3
+# fibonacci(n, m)
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
@@ -11,10 +25,20 @@ def fibonacci(n, m):
 # Для решения данной задачи нельзя использовать встроенную функцию и метод sort()
 
 
-def sort_to_max(origin_list):
-    pass
-
-sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+# def sort_to_max(origin_list):
+#     a = 0
+#     b = 1
+#     while b < len(origin_list):
+#         while a < (len(origin_list) - 1):
+#             if origin_list[a] > origin_list[a+1]:
+#                 origin_list[a], origin_list[a+1] = origin_list[a+1], origin_list[a]
+#             a += 1
+#         b += 1
+#         a = 0
+#
+# original_list = [2, 10, -12, 2.5, 20, -11, 4, 4, 0]
+# sort_to_max(original_list)
+# print(original_list)
 
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
