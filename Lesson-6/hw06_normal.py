@@ -1,10 +1,16 @@
+import os
+import sys
+from hw06_easy import current_dir
+
 # Задача-1:
 # Примечание: Если уже делали easy задание, то просто перенесите решение сюда.
 # Следующая программа написана верно, однако содержит места потенциальных ошибок.
 # используя конструкцию try добавьте в код обработку соответствующих исключений.
 # Пример.
 # Исходная программа:
+
 def avg(a, b):
+
     """Вернуть среднее геометрическое чисел 'a' и 'b'.
 
     Параметры:
@@ -13,13 +19,24 @@ def avg(a, b):
     Результат:
         - float.
     """
-    return (a * b) ** 0.5
+    while True:
+        try:
+           a = float(input("a = "))
+           break
+        except ValueError:
+           print('Введите любое число')
+           continue
 
+    while True:
+       try:
+           b = float(input("b = "))
+           break
+       except ValueError:
+           print('Введите любое число')
+           continue
+    c = (a * b) ** 0.5
+    print("Среднее геометрическое = {:.2f}".format(c))
 
-a = float(input("a = "))
-b = float(input("b = "))
-c = avg(a, b)
-print("Среднее геометрическое = {:.2f}".format(c))
 
 # ПРИМЕЧАНИЕ: Для решения задачи 2-3 необходимо познакомиться с модулями os, sys!
 # СМ.: https://pythonworld.ru/moduli/modul-os.html, https://pythonworld.ru/moduli/modul-sys.html
@@ -40,3 +57,18 @@ print("Среднее геометрическое = {:.2f}".format(c))
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
 
+#print(sys.argv)
+# dir_name = sys.argv[1]
+# dir_path = os.path.join(os.getcwd(), dir_name)
+# os.mkdir(dir_path)
+# print('Папка создана')
+
+# a = int(input('Введите номер задачи:'))
+
+# #if a == 1:
+#  #   name_dir = input('Введите имя папки:')
+#     path = os.getcwd()
+#     list = current_dir(path)
+#     # if name_dir in list:
+#     #     os.chdir(name_dir)
+#     #     print(os.getcwd())
