@@ -1,0 +1,76 @@
+CREATE TABLE competition
+(
+    competition_id INTEGER,
+    competition_name VARCHAR(30),
+    world_record VARCHAR(30),
+    set_date DATE
+);
+
+CREATE TABLE RESULT
+(
+    competition_id INTEGER,
+  	sportsman_id INTEGER,
+    result INTEGER,
+    city VARCHAR(30),
+    hold_date DATE
+);
+
+CREATE TABLE sportsman
+(
+    sportsman_id INTEGER,
+  	sportsman_name VARCHAR(30),
+  	rank INTEGER,
+  	year_of_birth DATE,
+  	personal_record INTEGER,  
+    country VARCHAR(30)
+ );
+
+INSERT INTO sportsman
+(sportsman_id, sportsman_name, rank, year_of_birth, personal_record, country)
+VALUES
+( 1, 'Janko Kaimanovic', 1, '1990-01-25', '1522', 'Croatia' ),
+( 2, 'Felipe Rodriguez', 1, '1985-11-25', '1596', 'Brazil' ),
+( 3, 'Viktor Seleznev', 3, '1992-08-11', '1459', 'Russia' ),
+( 4, 'Lewis Hilton', 3, '1987-06-04', '1158', 'England' ),
+( 5, 'Frank de Jorux', 2, '1991-12-08', '1396', 'France' );
+
+INSERT INTO result
+(competition_id, sportsman_id, result, city, hold_date)
+VALUES
+( 1, 1, 1356, 'Berlin', '2020-07-25' ),
+( 1, 4, 1248, 'Berlin', '2020-07-25' ),
+( 1, 5, 1234, 'Berlin', '2020-07-25' ),
+( 1, 3, 1189, 'Berlin', '2020-07-25' ),
+( 1, 2, 1174, 'Berlin', '2020-07-25' ),
+( 2, 3, 1356, 'Moscow', '2020-07-30' ),
+( 2, 2, 1248, 'Moscow', '2020-07-30' ),
+( 2, 1, 1234, 'Moscow', '2020-07-30' ),
+( 2, 5, 1189, 'Moscow', '2020-07-30' ),
+( 2, 4, 1174, 'Moscow', '2020-07-30' );
+                             
+INSERT INTO competition
+(competition_id, competition_name, world_record, set_date)
+VALUES
+( 1, 'Berlin Cup', 1500, '1990-02-01' ),
+( 2, 'Moscow Cup', 1400, '1995-03-15' ),
+( 3, 'Madrid Cup', 1350, '2000-11-21' ),
+( 4, 'Paris Cup', 1450, '1997-07-07' ),
+( 5, 'Milan Cup', 1200, '1985-08-28' );
+
+SELECT * FROM sportsman
+
+SELECT competition_name, world_record FROM competition ORDER BY world_record DESC
+
+SELECT sportsman_name, year_of_birth FROM sportsman WHERE year_of_birth > '1989-12-31' AND year_of_birth < '1991-01-01'
+
+SELECT city, result
+FROM result
+WHERE hold_date = '2010-05-12' AND hold_date = '2010-05-15'
+
+SELECT city, result
+FROM result
+WHERE city = 'Moscow' AND result = '1248'
+
+SELECT sportsman_name, personal_record
+FROM sportsman
+WHERE personal_record < 1500
