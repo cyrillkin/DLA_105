@@ -1,0 +1,17 @@
+{
+  "action": "msg_from_chat",
+  "time": "2021-04-05-14.11.27",
+  "message": "erfef",
+  "user": {
+    "name": "lkl",
+    "status": "online"
+  }
+}{
+  "action": "msg_from_chat",
+  "time": "2021-04-05-14.13.07",
+  "message": "xvxv",
+  "user": {
+    "name": "lkl",
+    "status": "online"
+  }
+}
