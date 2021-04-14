@@ -97,22 +97,29 @@ def lucky_ticket_2(number_ticket):
 if __name__ == '__main__':
 
     convert(10)
+    print('')
 
+    #Первый вариант
     print(my_round(2.1234567, 5))
     print(my_round(2.1999967, 5))
     print(my_round(2.9999967, 5))
+    print('')
 
+    #Второй вариант
     print(my_round_2('2.1234567', 5))
     print(my_round_2('2.1999967', 5))
     print(my_round_2('2.9999967', 5))
+    print('')
 
+    #Первый вариант
     print(lucky_ticket(123006))
     print(lucky_ticket(123214))
     print(lucky_ticket(436751))
     print(lucky_ticket(500751))
+    print('')
 
+    #Второй вариант
     print(lucky_ticket_2(123006))
     print(lucky_ticket_2(123214))
     print(lucky_ticket_2(436751))
     print(lucky_ticket_2(500751))
-

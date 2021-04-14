@@ -6,7 +6,7 @@ __author__ = 'Маштаков Кирилл Владимирович'
 # "Василий на 2 года/лет больше 18"
 # по желанию сделать адаптивный вывод, то есть "на 5 лет больше", "на 3 года меньше" и.т.д.
 
-"""
+
 name = str(input('Your name:'))
 age = int(input('How old are you:'))
 
@@ -22,7 +22,7 @@ elif diff<0:
     res = print(name, 'на', abs(diff), year, 'меньше 18')
 else:
     res = print(name, 'вам 18 лет')
-"""
+
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
 # Поменять значения переменных местами. Вывести новые значения на экран.
@@ -32,20 +32,36 @@ else:
 # Не нужно решать задачу так:
 # print("a = ", b, "b = ", a) - это неправильное решение!
 
-"""
+# Первый способ:
+
 var_1 = int(input('First variable:'))   #ввод первой переменной
 var_2 = int(input('Second variable:'))  #ввод второй переменной
 
-# Первый способ:
-#var_1, var_2 = var_2, var_1
+var_1, var_2 = var_2, var_1
+
+print('\nVariables exchange!\nFirst variable:', var_1, '\nSecond variable:', var_2) #вывод на экран
 
 # Второй способ:
+
+var_1 = int(input('First variable:'))   #ввод первой переменной
+var_2 = int(input('Second variable:'))  #ввод второй переменной
+
 div = var_1/var_2
 var_1 = int(var_1/div)
 var_2 = int(var_2*div)
 
 print('\nVariables exchange!\nFirst variable:', var_1, '\nSecond variable:', var_2) #вывод на экран
-"""
+
+# Третий способ
+
+var_1 = int(input('First variable:'))   #ввод первой переменной
+var_2 = int(input('Second variable:'))  #ввод второй переменной
+
+tmp = var_1
+var_1 = var_2
+var_2 = tmp
+
+print('\nVariables exchange!\nFirst variable:', var_1, '\nSecond variable:', var_2) #вывод на экран
 
 # Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
 # ax² + bx + c = 0.
@@ -54,7 +70,7 @@ print('\nVariables exchange!\nFirst variable:', var_1, '\nSecond variable:', var
 # import math
 # math.sqrt(4) - вычисляет корень числа 4
 
-"""
+
 a = int(input('First coef:'))  #коэффициент a
 b = int(input('Second coef:'))  #коэффициент b
 c = int(input('Third coef:'))  #коэффициент с
@@ -70,4 +86,3 @@ elif D == 0:
     print('The equation have one root:\nx = ', x)
 else:
     print('No roots')
-"""

@@ -1,11 +1,13 @@
 import random
 import re
 
+
 # Задание-1:
 # Вывести символы в нижнем регистре, которые находятся вокруг
 # 1 или более символов в верхнем регистре.
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
+
 
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK'\
@@ -25,6 +27,8 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
 
 pattern = '([a-z]+)'
 print(re.findall(pattern, line))
+print('')
+
 
 # Задание-2:
 # Вывести символы в верхнем регистре, слева от которых находятся
@@ -33,6 +37,7 @@ print(re.findall(pattern, line))
 # "GAMkgAYEOmHBSQsSUHKvSfbmxULaysmNOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLec"
 # нужно получить список строк: ['AY', 'NOGI', 'P']
 # Решить задачу двумя способами: с помощью re и без.
+
 
 line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'NOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewV'\
@@ -52,6 +57,8 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
 
 pattern_2 = '(?=[a-z]{2}([A-Z]+)[A-Z]{2})'
 print(re.findall(pattern_2, line_2))
+print('')
+
 
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
@@ -60,16 +67,21 @@ print(re.findall(pattern_2, line_2))
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
 
+
 integer = ''
-for i in range(200):
+list = []
+
+for i in range(2500):
        integer += str((random.randint(0, 9)))
 
 path = 'text.txt'
 with open(path, 'w', encoding='UTF-8') as f:
        f.write(str(integer))
 
-with open(path, 'r', encoding='UTF-8') as f:
-       string = list(f.read())
+for i in range(0, 10):
+       pattern_3 = '[{}]+'.format(i)
+       record = re.findall(pattern_3, integer)
+       for n in record:
+              list.append(int(n))
 
-pattern_3 = ''
-print(re.findall(pattern_3, integer))
+print(max(list))

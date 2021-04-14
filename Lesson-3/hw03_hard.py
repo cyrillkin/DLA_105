@@ -1,14 +1,20 @@
 ﻿# Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
-
 # equation = 'y = -12x + 11111140.2121'
 # x = 2.5
 # вычислите и выведите y
 
-# str = equation.split(' ')
-# a = str[2]
-# coef_a = str[2][:-1]
-# print(float(coef_a) * x + float(str[4]))
+
+equation = 'y = -12x + 11111140.2121'
+x = 2.5
+
+str = equation.split(' ')
+a = str[2]
+coef_a = str[2][:-1]
+
+y = float(coef_a) * x + float(str[4])
+print(y)
+print('')
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
@@ -27,27 +33,31 @@
 # date = '01.22.1001'
 # date = '1.12.1001'
 # date = '-2.10.3001'
-#
-# date = date.split('.')
-#
-# day = int(date[0])
-# month = int(date[1])
-# year = int(date[2])
-#
-# a = [1, 3, 5, 7, 9, 11]
-#
-# if day < 1 or day > 31:
-#     print('Введён некорректный день')
-# elif month not in a and day > 30:
-#         print('Введён некорректный день')
-# elif month < 1 or month > 12:
-#     print('Введён некорректный месяц')
-# elif year < 1 or month > 9999:
-#     print('Введён некорректный год')
-# elif len(date[0]) != 2 or len(date[1]) != 2 or len(date[2]) != 4:
-#     print('Введён некорректный формат даты')
-# else:
-#     print('Дата введена корректна')
+
+
+date = input('Введите дату:')
+d = date.split('.')
+
+day = int(d[0])
+month = int(d[1])
+year = int(d[2])
+
+a = [1, 3, 5, 7, 8, 10, 12]
+
+if month not in a and day > 30:
+    print('Введён некорректный день')
+elif day > 31 or day < 1:
+    print('Введён некорректный день')
+elif month > 12 or month < 1:
+    print('Введён некорректный месяц')
+elif year > 9999 or year < 1:
+    print('Введён некорректный год')
+elif (len(d[0])) != 2 or len(d[1]) != 2 or len(d[2]) != 4:
+    print('Введён некорректный формат даты')
+
+else:
+    print('Всё верно! Дата {} введена правильно!'.format(date))
+
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #

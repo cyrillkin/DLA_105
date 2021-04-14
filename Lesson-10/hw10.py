@@ -17,7 +17,7 @@ class Products:
 
         pass
 
-class FruitProduct(Product):
+class FruitProduct(Products):
     def __init__(self, made_country, expiration):
         self.made_country = made_country
         self.expiration = expiration

@@ -19,6 +19,46 @@
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
 
 
+workers = []
+hours = []
+
+workers_file = open('data/workers', 'r', encoding='UTF-8')
+for i in workers_file:
+    workers.append(i.strip())
+workers_file.close()
+
+hours_file = open('data/hours_of', 'r', encoding='UTF-8')
+for i in hours_file:
+    hours.append(i.strip())
+hours_file.close()
+
+workers = workers[1:]
+hours = hours[1:]
+
+vedomost = open('data/total.txt', 'w', encoding='UTF-8')
+for m in workers:
+    x = m.split(' ')
+    name_workers = x[0]
+    surname_workers = x[1]
+    for n in hours:
+        y = n.split(' ')
+        name_hours = y[0]
+        surname_hours = y[1]
+        if name_workers == name_hours and surname_workers == surname_hours:
+            salary = int(x[2])
+            norma = int(x[4])
+            work_hours = int(y[2])
+            work = work_hours - norma
+            if work > 0:
+                total = salary + ((salary / norma) * (work_hours - norma)) * 2
+            else:
+                total = salary + (salary / norma) * (work_hours - norma)
+
+            write_str = name_workers + ' ' + surname_hours + ' ' + str(total) + '\n'
+            vedomost.write(write_str)
+vedomost.close()
+
+
 # Задание-3:
 # Дан файл ("data/fruits") со списком фруктов.
 # Записать в новые файлы все фрукты, начинающиеся с определенной буквы.
@@ -31,3 +71,16 @@
 # Подсказка:
 # Чтобы получить список больших букв русского алфавита:
 # print(list(map(chr, range(ord('А'), ord('Я')+1))))
+
+
+dict = dict()
+
+with open('data/fruits.txt', 'r', encoding='UTF-8') as read:
+    for i in read.readlines():
+        file = 'fruits_{}'.format(i[0].upper().strip())
+        dict[file] = dict.get(file, '') + i
+
+for n in dict:
+    name = 'data/{}.txt'.format(n)
+    with open(name, 'w', encoding='UTF-8') as record:
+        record.write(dict[n])

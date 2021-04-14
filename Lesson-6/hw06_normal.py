@@ -1,6 +1,7 @@
 import os
 import sys
-from hw06_easy import current_dir
+from hw06_easy import current_dir, make_dir, remove_dir
+
 
 # Задача-1:
 # Примечание: Если уже делали easy задание, то просто перенесите решение сюда.
@@ -8,6 +9,7 @@ from hw06_easy import current_dir
 # используя конструкцию try добавьте в код обработку соответствующих исключений.
 # Пример.
 # Исходная программа:
+
 
 def avg(a, b):
 
@@ -57,18 +59,21 @@ def avg(a, b):
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
 
-#print(sys.argv)
-# dir_name = sys.argv[1]
-# dir_path = os.path.join(os.getcwd(), dir_name)
-# os.mkdir(dir_path)
-# print('Папка создана')
 
-# a = int(input('Введите номер задачи:'))
+move_to_dir = sys.argv[1]
+look_current_dir = sys.argv[2]
+make_new_dir = sys.argv[3]
+remove_current_dir = sys.argv[4]
 
-# #if a == 1:
-#  #   name_dir = input('Введите имя папки:')
-#     path = os.getcwd()
-#     list = current_dir(path)
-#     # if name_dir in list:
-#     #     os.chdir(name_dir)
-#     #     print(os.getcwd())
+
+dir = os.path.join(os.getcwd(), move_to_dir)
+os.chdir(dir)
+
+dir2 = os.path.join(os.getcwd(), look_current_dir)
+current_dir(dir2)
+
+dir_path = os.path.join(os.getcwd(), make_new_dir)
+make_dir(dir_path)
+
+remove_current_dir = os.path.join(os.getcwd(), remove_current_dir)
+remove_dir(remove_current_dir)
