@@ -36,16 +36,23 @@ while not shutdown:
         try:
             message = input('[You] :: ')
             if message != "":
-                s.sendto(("[" + name + "] :: " + message).encode("utf-8"), server)
                 itsatime = time.strftime("%Y-%m-%d-%H.%M.%S", time.localtime())
-                data_for_json = {'action': 'msg_from_chat',
-                        'time': itsatime,
-                        'message': message,
-                        'user':
-                            {'name': name,
-                             'status': 'online'}}
-                with open('json.json', 'w') as file:
-                    json.dump(data_for_json, file)
+                d = {
+                    "action": "msg_from_chat",
+                    "time": itsatime,
+                    "message": message,
+                    "user": {
+                            "name": name,
+                            "status": 'online'
+                            }
+                    }
+                with open('data.json', 'w') as outfile:
+                    json.dump(d, outfile)
+
+                with open('data.json', 'r') as file:
+                    data = json.loads(file.read())
+
+                s.sendto(("[" + name + "] :: " + message).encode("utf-8"), server)
         except Exception as e:
             s.sendto(("[" + name + "] => left chat").encode("utf-8"), server)
             shutdown = True

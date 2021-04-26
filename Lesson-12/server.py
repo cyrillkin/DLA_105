@@ -1,10 +1,6 @@
 from socket import *
 import time
-import json
 
-# with open('json.json', 'r') as file:
-#             data_j = json.loads(file.read())
-#             print(data_j.get[0]('message'))
 
 HOST = 'localhost'
 PORT = 9090
@@ -16,7 +12,6 @@ s.bind((HOST, PORT))
 
 print('Server started!')
 quit = False
-# s.listen(5)
 
 while not quit:
     try:
